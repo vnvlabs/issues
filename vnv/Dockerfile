@@ -12,5 +12,7 @@ RUN  cd ${SOURCE_DIR}/issues \
      && cp -r ../vnv/config ${SOFTWARE_DIR}/plugins/issues/gui \
      && rm -r ${SOURCE_DIR}/issues
 
-ENV VNV_CONFIG=${VNV_CONFIG}:${SOFTWARE_DIR}/plugins/issues/gui/vnv.__registration__
-ENV VNV_PLUGINS=${VNV_PLUGINS}@issues:${SOFTWARE_DIR}/plugins/issues/lib/libissues.so
+RUN ${VNV_REGISTER} gui ISSUES ${SOFTWARE_DIR}/plugins/issues/gui/vnv.__registration__
+RUN ${VNV_REGISTER} plugin ISSUES ${SOFTWARE_DIR}/plugins/issues/lib/libissues.so
+
+
