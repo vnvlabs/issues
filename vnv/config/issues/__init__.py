@@ -35,6 +35,11 @@ class ISSUES_INFO:
     def tablist(self):
         return {"issues" : ["Issues", "issues/issues.html"]}
 
+    def script(self):
+        return ""
+
+
+        
 blueprint = Blueprint(
         'issues',
         __name__,
